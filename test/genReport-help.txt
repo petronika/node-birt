@@ -1,0 +1,102 @@
+--------------------------------------------------------------------------------
+./genReport.sh --help
+--------------------------------------------------------------------------------
+Help for ReportRunner
+
+--mode/-m [run|render|runrender] [options] [rptdesign|rptdocument]
+	The default mode is runrender.
+To see options for run mode, use:
+	--help/-h run
+To see options for render mode, use:
+	--help/-h render
+To see options for runrender mode, use:
+	--help/-h runrender
+Print current message, use --help/-h
+
+--------------------------------------------------------------------------------
+./genReport.sh --help run
+--------------------------------------------------------------------------------
+ReportRunner's run mode:
+--mode/-m run [options] <rptdesign file>
+where options could be:
+	--output/-o <target file>
+	--parameter/-p <"parameterName=parameterValue">
+	--config/-c <"configName=configValue">
+	--file/-F <file>
+
+1. parameters/configs in command line will overide those in file
+2. parameter/config name can not include characters such as ' ', '=', ':'
+use "--help/-h configNames" for a list of configurables
+use "--help/-h file" for options in <file>
+
+--------------------------------------------------------------------------------
+./genReport.sh --help render
+--------------------------------------------------------------------------------
+ReportRunner's RENDER mode:
+--mode/-m render [options] <rptdocument file>
+where options could be:
+	--format/-f [HTML|PDF]
+	--output/-o <target file>
+	--page/-n <pageNumber>
+	--locale/-l <locale>     default is english
+	--config/-c <"configName=configValue">
+	--renderOption/-r <"optionName=optionValue">
+	--file/-F <file>
+
+1. configs/renderOptions in command line will overide those in file
+2. config/renderOption name can not include characters such as ' ', '=', ':'
+use "--help/-h configNames" for a list of configurables
+use "--help/-h renderOptions" for a list of render options
+use "--help/-h file" for options in <file>
+
+--------------------------------------------------------------------------------
+./genReport.sh --help runrender
+--------------------------------------------------------------------------------
+ReportRunner's RUNRENDER mode:
+--mode/-m runrender [options] <rptdesign file>
+where options could be:
+	--format/-f [HTML|PDF]
+	--output/-o <target file>
+	--htmlType/-t < HTML | ReportletNoCSS >
+	--encoding/-e <target encoding>
+	--locale/-l <locale>    default is english
+	--parameter/-p <"parameterName=parameterValue">
+	--config/-c <"configName=configValue">
+	--renderOption/-r <"optionName=optionValue">
+	--file/-F <file>
+
+1. parameters/configs/renderOptions in command line will overide those in file
+2. parameter/config/renderOption name can not include characters such as ' ', '=', ':'
+use "--help/-h configNames" for a list of configurables
+use "--help/-h renderOptions" for a list of render options
+use "--help/-h file" for options in <file>
+
+--------------------------------------------------------------------------------
+./genReport.sh --help configNames
+--------------------------------------------------------------------------------
+Configurables include:
+	resourceDir    the directory where resources reside
+	tempDir        the directory to place temporary file
+	logDir         the directory where logs are generated
+	logLevel       log level, see java.util.Level
+	logFile        the log file
+	scriptPath     the class path where to find scripts
+
+--------------------------------------------------------------------------------
+./genReport.sh --help renderOptions
+--------------------------------------------------------------------------------
+RenderOptions include:
+	format      the output format, html or pdf
+	htmlType    html type
+	output      the output file
+	locale      the locale used to render the report
+	encoding    encoding
+	page        the page number to be rendered
+
+--------------------------------------------------------------------------------
+./genReport.sh --help file
+--------------------------------------------------------------------------------
+When specified with --file/-F <file>, the <file> can be used to hold some default options.
+The command line options overwrite those in <file>.
+The options include what config/renderOption/parameter can have.
+Use "-h configNames", "-h renderOptions" for detailed options

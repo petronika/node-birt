@@ -1,0 +1,23 @@
+{
+  "name": "birt",
+  "version": "1.0.0",
+  "description": "Utility for run BIRT Runtime",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "birt"
+  ],
+  "author": "Petr.B.Titov@gmail.com",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "tito",
+      "email": "Petr.B.Titov@gmail.com"
+    }
+  ]
+}
